@@ -22,10 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const resultsDiv = document.getElementById('results');
         resultsDiv.innerHTML = `
-            <div class="result-item">Doer: ${totalScores.A} points</div>
-            <div class="result-item">Thinker: ${totalScores.B} points</div>
-            <div class="result-item">Feeler: ${totalScores.C} points</div>
-            <div class="result-item">Planner: ${totalScores.D} points</div>
+            <div class="result-item ${totalScores.A === Math.max(...Object.values(totalScores))?"primaryLeadershipStyle":"secondaryLeadershipStyle"}">Doer: ${totalScores.A} points</div>
+            <div class="result-item ${totalScores.B === Math.max(...Object.values(totalScores))?"primaryLeadershipStyle":"secondaryLeadershipStyle"}">Thinker: ${totalScores.B} points</div>
+            <div class="result-item ${totalScores.C === Math.max(...Object.values(totalScores))?"primaryLeadershipStyle":"secondaryLeadershipStyle"}">Feeler: ${totalScores.C} points</div>
+            <div class="result-item ${totalScores.D === Math.max(...Object.values(totalScores))?"primaryLeadershipStyle":"secondaryLeadershipStyle"}">Planner: ${totalScores.D} points</div>
+            <a href="./LeadershipStyleDescriptions.pdf" target="_blank" class="button">Explore your leadership style</a>
         `;
     });
 });

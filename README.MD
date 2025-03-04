@@ -26,6 +26,6 @@ These are all static pages so they don't need any complicated hosting environmen
 
 ## Potential enhancements
 1. If a person navigated away from the page it would reset their sorted order and score. This could be enhanced by adding a cookie to maintain the state.
-2. It might be nice to take people to another web page that would show the different attributes of each leadership type.
-3. Right now the choices are always listed in a DOER - THINKER - FEELER - PLANNER ordered format. These could either be randomly ordered each time, or for simplicity, simply swapped around in the original index.html file. It will all automatically work regardless of order as long as the data-category letter isn't changed.
+2. ~~It might be nice to take people to another web page that would show the different attributes of each leadership type.~~ Done!
+3. ~~Right now the choices are always listed in a DOER - THINKER - FEELER - PLANNER ordered format. These could either be randomly ordered each time, or for simplicity, simply swapped around in the original index.html file. It will all automatically work regardless of order as long as the data-category letter isn't changed.~~ Done!
 

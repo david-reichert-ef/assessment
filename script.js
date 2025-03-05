@@ -1,9 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sortableContainers = document.querySelectorAll('.sortable-container');
 
-    sortableContainers.forEach(container => {
-        Sortable.create(container, { animation: 150 });
-    });
+    sortableContainers.forEach((container, index) => {
+        const savedOrder = JSON.parse(localStorage.getItem(`sortableOrder-${index}`)) || [];
+        const items = Array.from(container.children);
+    
+        // Reorder elements based on saved order
+        savedOrder.forEach(text => {
+            const item = items.find(el => el.textContent.trim() === text.trim());
+            if (item) container.appendChild(item);
+        });
+    
+        // Initialize Sortable.js
+        Sortable.create(container, {
+            animation: 150,
+            onEnd: () => localStorage.setItem(`sortableOrder-${index}`, JSON.stringify(
+                Array.from(container.children).map(el => el.textContent.trim())
+            ))
+        });
+    });    
 
     document.getElementById('submit-btn').addEventListener('click', function () {
         const calculateScores = (containers) => {
